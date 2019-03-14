@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-portfolio-cara",
-  "description": "Playful & Colorful One-Page website with Parallax effect powered by react-spring, TailwindCSS.",
+  "name": "cv-de-raphael-colson",
+  "description": "CV de Raphaël Colson - Développeur web junior avec une expérience en communication et en animation de groupes",
   "version": "3.0.0",
-  "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
+  "author": "Raphaël Colson <raphcolson@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -53,11 +53,11 @@
     "prettier": "^1.16.4"
   },
   "repository": {
-    "url": "https://github.com/LekoArts/gatsby-starter-portfolio-cara",
+    "url": "https://github.com/rafacolsn/cv",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/LekoArts/gatsby-starter-portfolio-cara/issues"
+    "url": "https://github.com/rafacolsn/cv/issues"
   },
-  "homepage": "https://cara.lekoarts.de"
+  "homepage": "https://rafacolsn.github.io/cv"
 }

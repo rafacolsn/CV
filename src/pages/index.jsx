@@ -17,7 +17,7 @@ import Projects from '../views/Projects'
 import About from '../views/About'
 import Contact from '../views/Contact'
 
-import avatar from '../images/avatar.jpg'
+import avatar from '../images/rafacolson.jpg'
 
 const ProjectsWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
@@ -63,9 +63,9 @@ const Index = () => (
     <Parallax pages={5}>
       <Hero offset={0}>
         <BigTitle>
-          Hello, <br /> I'm John Doe.
+          Raphaël Colson, <br /> développeur web junior.
         </BigTitle>
-        <Subtitle>I'm creating noice web experiences for the next generation of consumer-facing companies.</Subtitle>
+        <Subtitle>Je recherche un poste dans un domaine qui ait du sens pour moi (économie sociale et solidaire, environnement, initiatives locales et citoyennes, startups innovantes...)</Subtitle>
       </Hero>
       <Projects offset={1}>
         <Title>Projects</Title>
@@ -105,8 +105,7 @@ const Index = () => (
         <AboutHero>
           <Avatar src={avatar} alt="John Doe" />
           <AboutSub>
-            The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
-            Emoji into my speech to better express myself. Winky face.
+            L'avenir n'est pas ce qui va arriver, mais ce que nous allons faire...
           </AboutSub>
         </AboutHero>
         <AboutDesc>
