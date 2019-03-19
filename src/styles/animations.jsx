@@ -39,6 +39,23 @@ const upDownWide = keyframes`
     transform: translateY(200px);
   }
 `
+const leftRight = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50px);
+  }
+`
+const rightLeft = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-30px);
+  }
+`
+
 
 const upDownAnimation = css`
   ${upDown} 4s ease-in-out infinite alternate;
@@ -46,6 +63,12 @@ const upDownAnimation = css`
 
 const upDownWideAnimation = css`
   ${upDownWide} 18s ease-in-out infinite alternate;
+`
+const leftRightAnimation = css`
+  ${leftRight} 5s ease-in-out infinite alternate;
+`
+const rightLeftAnimation = css`
+  ${rightLeft} 3s ease-in-out infinite alternate;
 `
 
 export const UpDown = styled.div`
@@ -55,6 +78,14 @@ export const UpDown = styled.div`
 
 export const UpDownWide = styled.div`
   animation: ${upDownWideAnimation};
+  ${tw`pin absolute`};
+`
+export const LeftRight = styled.div`
+  animation: ${leftRightAnimation};
+  ${tw`pin absolute`};
+`
+export const RightLeft = styled.div`
+  animation: ${rightLeftAnimation};
   ${tw`pin absolute`};
 `
 
