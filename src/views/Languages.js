@@ -7,7 +7,7 @@ import { UpDown, UpDownWide, LeftRight, RightLeft } from "../styles/animations";
 import { colors } from "../../tailwind";
 import SVG from "../components/SVG";
 
-const About = ({ children, offset }) => (
+const Languages = ({ children, offset }) => (
   <>
     <Divider 
       bg="#23262b"
@@ -112,15 +112,15 @@ const About = ({ children, offset }) => (
         />
       </RightLeft>
     </Divider>
-    <Content speed={0.4} offset={offset}>
+    <Content speed={0.4} offset={offset} factor={1}>
       <Inner>{children}</Inner>
     </Content>
   </>
 );
 
-export default About;
+export default Languages;
 
-About.propTypes = {
+Languages.propTypes = {
   children: PropTypes.node.isRequired,
   offset: PropTypes.number.isRequired
 };

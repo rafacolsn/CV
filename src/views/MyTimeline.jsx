@@ -14,8 +14,9 @@ const MyTimeline = ({ children, offset }) => (
       clipPath="polygon(0 6%, 100% 24%, 100% 100%, 0 94%)"
       speed={0.2}
       offset={offset}
+      
     />
-    <Divider speed={0.1} offset={offset}>
+    <Divider speed={0.1} offset={offset} >
       <UpDown>
         <SVG
           icon="box"
@@ -110,7 +111,7 @@ const MyTimeline = ({ children, offset }) => (
         />
       </LeftRight>
     </Divider>
-    <Content speed={0.4} offset={offset}>
+    <Content speed={0.5} offset={offset}>
       <Inner>{children}</Inner>
     </Content>
   </>

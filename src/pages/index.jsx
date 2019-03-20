@@ -4,16 +4,22 @@ import tw from "tailwind.macro";
 import { Parallax } from "react-spring/renderprops-addons.cjs";
 import { Timeline, TimelineItem } from "vertical-timeline-component-for-react";
 import Iframe from "react-iframe";
-import { navigate } from '@reach/router';
+import SVG from "../components/SVG";
+import { colors } from "../../tailwind";
 
 // Components
 import Layout from "../components/Layout";
 import MyTimeline from "../views/MyTimeline";
-import Menu from "../components/Menu";
 
 // Elements
 import Inner from "../elements/Inner";
-import { Title, BigTitle, Subtitle, CogTitle } from "../elements/Titles";
+import {
+  Title,
+  BigTitle,
+  Subtitle,
+  CogTitle,
+  LgTitle
+} from "../elements/Titles";
 import { Badges } from "../elements/Badges";
 
 // Views
@@ -23,6 +29,8 @@ import About from "../views/About";
 import Contact from "../views/Contact";
 
 import avatar from "../images/rafacolson.jpg";
+import ProjectCard from "../components/ProjectCard";
+import Languages from "../views/Languages";
 
 const ProjectsWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
@@ -39,8 +47,6 @@ const ProjectsWrapper = styled.div`
     grid-gap: 2rem;
   }
 `;
-
-  
 
 const AboutHero = styled.div`
   ${tw`flex flex-col lg:flex-row items-center mt-8`};
@@ -59,7 +65,7 @@ const AboutDesc = styled.p`
 `;
 
 const ContactText = styled.p`
-  ${tw`text-grey-light font-sans text-xl md:text-2xl lg:text-3xl`};
+  ${tw`text-grey-darkest font-sans text-xl md:text-2xl lg:text-3xl`};
 `;
 
 const Footer = styled.footer`
@@ -69,7 +75,7 @@ const Footer = styled.footer`
 const Iframes = Badges.map((el, index) => {
   return (
     <Iframe
-      key={"badge" + { index }}
+      key={"b" + index}
       url={el.url}
       width="330px"
       height="200px"
@@ -78,47 +84,47 @@ const Iframes = Badges.map((el, index) => {
   );
 });
 
+export let smOffset = [8, 0, 1, 2.5, 4, 6, 7];
+
+if (window.matchMedia("(max-width: 400px)").matches) {
+  smOffset = [11, 0, 1, 2.5, 4.5, 9.5, 10];
+}
 
 const Index = () => (
   <>
     <Layout />
 
-    <Parallax pages={8}>
-      <Menu bg="#222b2f">
-        <li onClick={() => navigate('#about')}>about</li>
-        <li>expérience</li>
-        <li>aptitudes</li>
-      </Menu>
-
-      <Hero offset={0}>
+    <Parallax pages={smOffset[0]}>
+      <Hero offset={smOffset[1]}>
         <BigTitle>
           Raphaël Colson, <br /> développeur web junior.
         </BigTitle>
         <Subtitle>
-          Je recherche un poste dans un domaine qui ait du sens pour moi
-          (environnement, économie sociale et solidaire, initiatives locales et
-          citoyennes, startups innovantes...)
+          Actuellement en formation dans le développement d'application web, je
+          suis à la recherche d'un poste de développeur web dans un domaine qui
+          ait du sens pour moi (bien-être social, environnement, économie
+          sociale et solidaire, initiatives locales et citoyennes, startups
+          innovantes).
         </Subtitle>
       </Hero>
-      <About  offset={1}>
-        <Title id="about">Me, Myself and I</Title>
+      <About offset={smOffset[2]}>
+        <Title>Me, Myself and I</Title>
         <AboutHero>
           <Avatar src={avatar} alt="Raph Colson" />
           <AboutSub>
-            L'avenir n'est pas ce qui va arriver, mais ce que nous allons
-            faire...
+            L'avenir n'est pas ce qui va arriver, mais ce que nous allons en
+            faire... (Henri Bergson)
           </AboutSub>
         </AboutHero>
         <AboutDesc>
-          Fort d'une expérience de plusieurs années dans l'animation de groupes,
-          la formation, et les applications pratiques de la communication
-          (vidéo, photo, sites web, radio, etc.), je suis à la recherche d'un
-          poste de développeur web dans un domaine qui ait du sens pour moi
-          (environnement, économie sociale et solidaire, initiatives locales et
-          citoyennes, startups innovantes...).
+          Fort d'une expérience de plusieurs années dans l'associatif,
+          l'animation de groupes, la formation, et les applications pratiques de
+          la communication, j'ai aussi travaillé comme freelance dans la
+          création de sites web avec Wordpress, la réalisation de vidéos et de
+          reportages photo.
         </AboutDesc>
       </About>
-      <MyTimeline offset={2.5}>
+      <MyTimeline offset={smOffset[3]}>
         <Timeline lineColor={"#ddd"}>
           <TimelineItem
             key="001"
@@ -126,18 +132,21 @@ const Index = () => (
             style={{ color: "#C12600" }}
             dateInnerStyle={{ background: "#C12600", color: "white" }}
           >
-            <h3>Formation BeCode</h3>
+            <h3>
+              <i className="fas fa-graduation-cap" /> Formation BeCode
+            </h3>
             <h4>Développeur web junior</h4>
             <p>
               Formation de 6 mois en développement web à BeCode Liège. Workflow
               Git, Javascript, Database, Frameworks (Laravel, Gatsby),
               Responsiveness, Environnement Linux, Backend (NodeJs, PHP),
-              Frontend (React). Présentation de groupes. Animation de workshops.
+              Frontend (React, Vue). Présentation de groupes. Animation de
+              workshops.
             </p>
           </TimelineItem>
           <TimelineItem
             key="002"
-            dateText="2016-2018"
+            dateText={"2016-2018"}
             dateInnerStyle={{ background: "#BF852E" }}
             style={{ color: "#BF852E" }}
             bodyContainerStyle={{
@@ -147,7 +156,9 @@ const Index = () => (
               boxShadow: "0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)"
             }}
           >
-            <h3 style={{ color: "#BF852E" }}>ATELIERS DE LA COLLINE</h3>
+            <h3 style={{ color: "#BF852E" }}>
+              <i className="fas fa-briefcase" /> ATELIERS DE LA COLLINE
+            </h3>
             <h4 style={{ color: "#BF852E" }}>
               Compagnie de théâtre jeune public
             </h4>
@@ -169,7 +180,9 @@ const Index = () => (
               boxShadow: "0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)"
             }}
           >
-            <h3 style={{ color: "#C12600" }}>EFDD</h3>
+            <h3 style={{ color: "#C12600" }}>
+              <i className="fas fa-briefcase" /> EFDD
+            </h3>
             <h4 style={{ color: "#C12600" }}>
               Education et formation au développement durable asbl - Cahiers du
               Développement Durable.
@@ -194,7 +207,8 @@ const Index = () => (
             }}
           >
             <h3 style={{ color: "#273238" }}>
-              NOVA MJ, Maison des Jeunes de Chaudfontaine
+              <i className="fas fa-briefcase" /> NOVA MJ, Maison des Jeunes de
+              Chaudfontaine
             </h3>
             <h4 style={{ color: "#273238" }}>
               Chargé de communication - animateur - éducateur - formateur.
@@ -214,7 +228,9 @@ const Index = () => (
             style={{ color: "#C12600" }}
             dateInnerStyle={{ background: "#C12600" }}
           >
-            <h3>Formation CNV</h3>
+            <h3>
+              <i className="fas fa-graduation-cap" /> Formation CNV
+            </h3>
             <h4>
               Gestion de conflit et gestion de groupes. Université de Paix
               Namur.
@@ -232,7 +248,9 @@ const Index = () => (
               boxShadow: "0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)"
             }}
           >
-            <h3 style={{ color: "#273238" }}>CENTRE CULTUREL DE SAMBREVILLE</h3>
+            <h3 style={{ color: "#273238" }}>
+              <i className="fas fa-briefcase" /> CENTRE CULTUREL DE SAMBREVILLE
+            </h3>
             <h4 style={{ color: "#273238" }}>
               Responsable audiovisuel et vidéaste pour spectacle de théâtre.
             </h4>
@@ -243,7 +261,10 @@ const Index = () => (
             style={{ color: "#C12600" }}
             dateInnerStyle={{ background: "#C12600" }}
           >
-            <h3 style={{ color: "#273238" }}>Service Volontaire Européen.</h3>
+            <h3 style={{ color: "#273238" }}>
+              <i className="fas fa-graduation-cap" /> Service Volontaire
+              Européen.
+            </h3>
             <h4 style={{ color: "#273238" }}>Six mois, en Espagne.</h4>
           </TimelineItem>
           <TimelineItem
@@ -259,19 +280,48 @@ const Index = () => (
             }}
           >
             <h3 style={{ color: "#BF852E" }}>
-              Licence (Master) en communication appliquée
+              <i className="fas fa-graduation-cap" /> Licence (Master) en
+              communication appliquée
             </h3>
             <h4 style={{ color: "#BF852E" }}>IHECS, Bruxelles.</h4>
             <p>Section «animation socioculturelle et éducation permanente».</p>
           </TimelineItem>
         </Timeline>
       </MyTimeline>
-      <Projects offset={4}>
+      <Projects offset={smOffset[4]}>
         <CogTitle>Aptitudes</CogTitle>
         <ProjectsWrapper>{Iframes}</ProjectsWrapper>
       </Projects>
-
-      <Contact offset={7}>
+      <Languages offset={smOffset[5]}>
+        <LgTitle>Langues</LgTitle>
+        <ProjectsWrapper>
+          <ProjectCard title="Français" bg={colors.orange}>
+            <SVG
+              icon="brain"
+              width={16}
+              stroke={colors.red}
+              left="75%"
+              top="15%"
+            />
+            <p>Langue dans laquelle j'ai été programmé... </p>
+          </ProjectCard>
+          <ProjectCard title="English" bg={"orange"}>
+            <SVG
+              icon="thumb"
+              width={16}
+              stroke={colors.red}
+              left="65%"
+              top="50%"
+            />
+            <p>Yes, I can !</p>
+          </ProjectCard>
+          <ProjectCard title="Español" bg={colors.orange}>
+            <SVG icon="toro" width={52} fill={colors.red} left="35%" top="5%" />
+            <p>Me recuerdo bastante bien, tio.</p>
+          </ProjectCard>
+        </ProjectsWrapper>
+      </Languages>
+      <Contact offset={smOffset[6]}>
         <Inner>
           <Title>Contact</Title>
           <ContactText>
@@ -286,10 +336,7 @@ const Index = () => (
         </Inner>
         <Footer>
           &copy; 2019 Raphaël Colson
-          <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">
-            Github Repository
-          </a>
-          . Made by <a href="https://www.lekoarts.de">LekoArts</a>.
+          <a href="https://github.com/rafacolsn/cv"> Github Repository</a>.
         </Footer>
       </Contact>
     </Parallax>

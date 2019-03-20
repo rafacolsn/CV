@@ -5,7 +5,14 @@ import tw from "tailwind.macro";
 import { colors } from "../../tailwind";
 import { Divider } from "../elements/Dividers";
 import Content from "../elements/Content";
-import { UpDown, UpDownWide, LeftRight, RightLeft } from "../styles/animations";
+import {
+  UpDown,
+  UpDownWide,
+  LeftRight,
+  RightLeft,
+  Blink,
+  Bounce
+} from "../styles/animations";
 import SVG from "../components/SVG";
 
 const Wrapper = styled.div`
@@ -24,7 +31,6 @@ const Hero = ({ children, offset }) => (
           left="5%"
           top="20%"
         />
-        {/* <SVG icon="hexa" width={48} stroke={colors.red} left="80%" top="70%" /> */}
         <SVG
           icon="box"
           width={6}
@@ -34,14 +40,6 @@ const Hero = ({ children, offset }) => (
         />
       </UpDown>
       <UpDownWide>
-        {/* <SVG
-          icon="arrowUp"
-          hiddenMobile
-          width={16}
-          fill={colors["blue-dark"]}
-          left="82%"
-          top="25%"
-        /> */}
         <SVG
           icon="envira"
           width={12}
@@ -58,26 +56,22 @@ const Hero = ({ children, offset }) => (
         />
         <SVG
           icon="triangle"
+          hiddenMobile
           width={16}
           stroke={colors["grey-darkest"]}
           left="30%"
           top="65%"
         />
-        <SVG
-          icon="camera"
-          width={16}
-          fill={colors.red}
-          left="82%"
-          top="5%"
-        />
+        <SVG icon="camera" width={16} fill={colors.red} left="82%" top="5%" />
         <SVG
           icon="circle"
           width={6}
+          hiddenMobile
           fill={colors["grey-darkest"]}
           left="75%"
           top="10%"
         />
-        
+
         <SVG
           icon="circle"
           width={12}
@@ -87,16 +81,14 @@ const Hero = ({ children, offset }) => (
         />
       </UpDownWide>
       <LeftRight>
-        {/* <SVG icon="box" hiddenMobile width={64} fill={colors.purple} left="5%" top="90%" /> */}
         <SVG
           icon="box"
+          hiddenMobile
           width={6}
           fill={colors["grey-darkest"]}
           left="10%"
           top="10%"
         />
-        {/* <SVG icon="box" width={12} fill={colors['grey-darkest']} left="40%" top="30%" /> */}
-        
         <SVG
           icon="hexa"
           width={8}
@@ -114,14 +106,6 @@ const Hero = ({ children, offset }) => (
         />
       </LeftRight>
       <RightLeft>
-      {/* <SVG
-          icon="upDown"
-          hiddenMobile
-          width={8}
-          fill={colors["grey-darkest"]}
-          left="52%"
-          top="45%"
-        /> */}
         <SVG icon="circle" width={6} fill={colors.red} left="4%" top="20%" />
         <SVG
           icon="upDown"
@@ -130,9 +114,10 @@ const Hero = ({ children, offset }) => (
           left="95%"
           top="90%"
         />
-        
+
         <SVG
           icon="triangle"
+          hiddenMobile
           width={8}
           stroke={colors["grey-darker"]}
           left="25%"
@@ -141,20 +126,30 @@ const Hero = ({ children, offset }) => (
         <SVG icon="circle" width={64} fill={colors.green} left="95%" top="5%" />
       </RightLeft>
       <SVG
-          icon="upDown"
-          hiddenMobile
-          width={24}
-          fill={colors["grey-darker"]}
-          left="5%"
-          top="95%"
-        />
-        <SVG
-          icon="hexa"
-          width={16}
-          stroke={colors["grey-darker"]}
-          left="10%"
-          top="50%"
-        />
+        icon="upDown"
+        hiddenMobile
+        width={24}
+        fill={colors["grey-darker"]}
+        left="5%"
+        top="95%"
+      />
+      <SVG
+        icon="hexa"
+        width={16}
+        hiddenMobile
+        stroke={colors["grey-darker"]}
+        left="10%"
+        top="50%"
+      />
+        <Bounce>
+          <SVG
+            icon="doubleDown"
+            width={8}
+            stroke={colors["grey-lighter"]}
+            left="48%"
+            top="90%"
+          />
+        </Bounce>
     </Divider>
     <Content speed={0.4} offset={offset}>
       <Wrapper>{children}</Wrapper>
