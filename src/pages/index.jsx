@@ -87,7 +87,7 @@ const Iframes = Badges.map((el, index) => {
 export let smOffset = [8, 0, 1, 2.5, 4, 6, 7];
 
 if (window.matchMedia("(max-width: 400px)").matches) {
-  smOffset = [11, 0, 1, 2.5, 4.5, 9.5, 10];
+  smOffset = [11, 0, 1, 3, 6, 9, 10];
 }
 
 const Index = () => (
