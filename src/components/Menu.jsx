@@ -31,16 +31,13 @@ const Ul = styled.ul`
       }
     }
     #li-1 {
-      animation: slideup 12s -3s infinite cubic-bezier(0,.77,1,.35);
+      animation: slideup 9s -3s infinite cubic-bezier(0,.77,1,.35);
     }
     #li-2 {
-      animation: slideup 12s -6s infinite cubic-bezier(0,.77,1,.35);
+      animation: slideup 9s -6s infinite cubic-bezier(0,.77,1,.35);
     }
     #li-3 {
-      animation: slideup 12s -9s infinite cubic-bezier(0,.77,1,.35);
-    }
-    #li-4 {
-      animation: slideup 12s -12s infinite cubic-bezier(0,.77,1,.35);
+      animation: slideup 9s -9s infinite cubic-bezier(0,.77,1,.35);
     }
   }
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);

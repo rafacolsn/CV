@@ -10,7 +10,6 @@ import {
   UpDownWide,
   LeftRight,
   RightLeft,
-  Blink,
   Bounce
 } from "../styles/animations";
 import SVG from "../components/SVG";
@@ -147,7 +146,7 @@ const Hero = ({ children, offset }) => (
             width={8}
             stroke={colors["grey-lighter"]}
             left="48%"
-            top="90%"
+            top="80%"
           />
         </Bounce>
     </Divider>

@@ -9,7 +9,11 @@ import lg from "../images/globe-americas-solid.svg";
 export const Title = styled.h1`
   ${tw`text-4xl lg:text-4xl font-sans text-hair mb-8 tracking-wide relative inline-block`};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  
   &:before {
+    @media (max-width: 400px) {
+      left: -20px;
+    }
     content: "";
     width: 40px;
     height: 40px;
@@ -55,6 +59,10 @@ export const LgTitle = styled.h1`
 
 export const BigTitle = styled.h1`
   ${tw`text-5xl lg:text-5xl font-sans text-black mb-6 tracking-wide`};
+  @media (max-width: 400px) {
+    font-size: 2rem;
+    padding-top: 6rem;
+  }
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
 `;
 

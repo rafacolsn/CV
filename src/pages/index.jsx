@@ -47,6 +47,11 @@ const ProjectsWrapper = styled.div`
     grid-template-columns: 1fr;
     grid-gap: 2rem;
   }
+  @media (max-width: 400px) {
+    .badges {
+      margin-left: -1.95rem;
+    }
+  }
 `;
 
 const AboutHero = styled.div`
@@ -75,7 +80,7 @@ const Footer = styled.footer`
 
 const Iframes = Badges.map((el, index) => {
   return (
-    <Iframe
+    <Iframe className="badges"
       key={"b" + index}
       url={el.url}
       width="330px"
@@ -89,7 +94,7 @@ export let smOffset = [8, 0, 1, 2.5, 4, 6, 7];
 
 if (typeof window !== `undefined`) {
   if (window.matchMedia("(max-width: 400px)").matches) {
-    smOffset = [11, 0, 1, 3, 6, 9, 10];
+    smOffset = [13, 0, 1.5, 4.5, 8, 11, 12];
   }
 }
 
@@ -103,9 +108,7 @@ const Index = () => (
     <Menu bg="#273238">
     <li id="li-1"><i id="phone" className="fas fa-phone-volume"></i> 0476 48 37 10</li>
       <li id="li-2"> <a href="mailto:raphcolson@gmail.com">raphcolson@gmail.com</a> </li>
-      
-      <li id="li-3">11 juillet 1980</li>
-      <li id="li-4"><i className="fab fa-linkedin-in"></i><i className="fab fa-github"></i></li>
+      <li id="li-3"><i className="fab fa-linkedin-in"></i><i className="fab fa-github"></i></li>
     </Menu>
       <Hero offset={smOffset[1]}>
         <BigTitle>
