@@ -10,6 +10,7 @@ import { colors } from "../../tailwind";
 // Components
 import Layout from "../components/Layout";
 import MyTimeline from "../views/MyTimeline";
+import Menu from "../components/Menu"
 
 // Elements
 import Inner from "../elements/Inner";
@@ -93,8 +94,16 @@ if (window.matchMedia("(max-width: 400px)").matches) {
 const Index = () => (
   <>
     <Layout />
+    
 
     <Parallax pages={smOffset[0]}>
+    <Menu bg="#273238">
+    <li id="li-1"><i id="phone" className="fas fa-phone-volume"></i> 0476 48 37 10</li>
+      <li id="li-2"> <a href="mailto:raphcolson@gmail.com">raphcolson@gmail.com</a> </li>
+      
+      <li id="li-3">11 juillet 1980</li>
+      <li id="li-4"><i className="fab fa-linkedin-in"></i><i className="fab fa-github"></i></li>
+    </Menu>
       <Hero offset={smOffset[1]}>
         <BigTitle>
           Raphaël Colson, <br /> développeur web junior.

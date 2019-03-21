@@ -1,6 +1,17 @@
 import tw from "tailwind.macro";
 import styled, { keyframes, css } from "styled-components";
 
+export const verticalSlide = keyframes`
+.slider {
+	overflow-y: hidden;
+	max-height: 500px; /* approximate max height */
+
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+`;
+
 const rotate = keyframes`
   from {
     transform: rotate(0deg);
@@ -80,7 +91,7 @@ const blinkAnimation = css`
 const bounceAnimation = css`
   ${bounce} .7s infinite alternate;
   ${blink} 3s ease-in-out infinite alternate;
-`
+`;
 
 const upDownAnimation = css`
   ${upDown} 4s ease-in-out infinite alternate;
@@ -103,8 +114,7 @@ export const Blink = styled.div`
 export const Bounce = styled.div`
   animation: ${bounceAnimation};
   ${tw`pin absolute`};
-
-`
+`;
 
 export const UpDown = styled.div`
   animation: ${upDownAnimation};
