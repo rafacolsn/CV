@@ -12,7 +12,7 @@ export const Title = styled.h1`
   
   &:before {
     @media (max-width: 400px) {
-      left: -20px;
+      display: none;
     }
     content: "";
     width: 40px;

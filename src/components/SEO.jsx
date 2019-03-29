@@ -94,7 +94,7 @@ const Head = props => {
         sizes="16x16"
         href="/favicons/rafacolson-16x16.png"
       />
-      <meta name="gatsby-starter" content="Gatsby Starter Portfolio Cara" />
+      <meta name="Raphaël Colson" content="Raphaël Colson développeur web junior" />
       <link rel="shortcut icon" href="favicon.ico" />
       <meta name="msapplication-TileColor" content={config.backgroundColor} />
       <meta name="msapplication-config" content="browserconfig.xml" />

@@ -10,7 +10,7 @@ import { colors } from "../../tailwind";
 // Components
 import Layout from "../components/Layout";
 import MyTimeline from "../views/MyTimeline";
-import Menu from "../components/Menu"
+import Menu from "../components/Menu";
 
 // Elements
 import Inner from "../elements/Inner";
@@ -75,12 +75,13 @@ const ContactText = styled.p`
 `;
 
 const Footer = styled.footer`
-  ${tw`text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg`};
+  ${tw`text-center text-grey absolute pin-b p-20 font-sans text-md lg:text-lg`};
 `;
 
 const Iframes = Badges.map((el, index) => {
   return (
-    <Iframe className="badges"
+    <Iframe
+      className="badges"
       key={"b" + index}
       url={el.url}
       width="330px"
@@ -90,7 +91,7 @@ const Iframes = Badges.map((el, index) => {
   );
 });
 
-export let smOffset = [8, 0, 1, 2.5, 4, 6, 7];
+export let smOffset = [8, 0, 1, 2.7, 4, 6, 7];
 
 if (typeof window !== `undefined`) {
   if (window.matchMedia("(max-width: 400px)").matches) {
@@ -98,28 +99,37 @@ if (typeof window !== `undefined`) {
   }
 }
 
-
 const Index = () => (
   <>
     <Layout />
-    
-
     <Parallax pages={smOffset[0]}>
-    <Menu bg="#273238">
-    <li id="li-1"><i id="phone" className="fas fa-phone-volume"></i> 0476 48 37 10</li>
-      <li id="li-2"> <a href="mailto:raphcolson@gmail.com">raphcolson@gmail.com</a> </li>
-      <li id="li-3"><i className="fab fa-linkedin-in"></i><i className="fab fa-github"></i></li>
-    </Menu>
+      <Menu bg="#273238">
+        <li id="li-1">
+          <i id="phone" className="fas fa-phone-volume" /> 0476 48 37 10
+        </li>
+        <li id="li-2">
+          <a href="mailto:raphcolson@gmail.com">raphcolson@gmail.com</a>
+        </li>
+        <li id="li-3">
+          <a
+            href="https://www.linkedin.com/in/rapha%C3%ABl-colson/"
+            target="blank"
+          >
+            <i className="fab fa-linkedin-in" />
+          </a>
+          <a href="https://github.com/rafacolsn" target="blank">
+            <i className="fab fa-github" />
+          </a>
+        </li>
+      </Menu>
       <Hero offset={smOffset[1]}>
         <BigTitle>
           Raphaël Colson, <br /> développeur web junior.
         </BigTitle>
         <Subtitle>
-          Actuellement en formation dans le développement d'application web, je
-          suis à la recherche d'un poste de développeur web dans un domaine qui
-          ait du sens pour moi (bien-être social, environnement, économie
-          sociale et solidaire, initiatives locales et citoyennes, startups
-          innovantes).
+          Actuellement en formation dans le développement web chez
+          <a href="https://www.becode.org/"> BeCode</a>, je suis à la recherche
+          d'un stage d'une durée de 2 à 3 mois comme développeur web junior.
         </Subtitle>
       </Hero>
       <About offset={smOffset[2]}>
@@ -132,11 +142,12 @@ const Index = () => (
           </AboutSub>
         </AboutHero>
         <AboutDesc>
-          Fort d'une expérience de plusieurs années dans l'associatif,
-          l'animation de groupes, la formation, et les applications pratiques de
-          la communication, j'ai aussi travaillé comme freelance dans la
-          création de sites web avec Wordpress, la réalisation de vidéos et de
-          reportages photo.
+          Diplômé d'une Licence (Master) en communication et fort d'une
+          expérience de plusieurs années dans l'associatif, l'animation de
+          groupes, la formation, et les applications pratiques de la
+          communication, j'ai aussi travaillé comme freelance dans la création
+          de sites web avec Wordpress, la réalisation de vidéos et de reportages
+          photo.
         </AboutDesc>
       </About>
       <MyTimeline offset={smOffset[3]}>
@@ -328,10 +339,10 @@ const Index = () => (
               left="65%"
               top="50%"
             />
-            <p>Yes, I can !</p>
+            <p>Yes, we can !</p>
           </ProjectCard>
           <ProjectCard title="Español" bg={colors.orange}>
-            <SVG icon="toro" width={52} fill={colors.red} left="35%" top="5%" />
+            <SVG icon="toro" width={24} fill={colors.red} left="70%" top="65%" />
             <p>Me recuerdo bastante bien, tio.</p>
           </ProjectCard>
         </ProjectsWrapper>
@@ -350,8 +361,7 @@ const Index = () => (
           </ContactText>
         </Inner>
         <Footer>
-          &copy; 2019 Raphaël Colson
-          <a href="https://github.com/rafacolsn/cv"> Github Repository</a>.
+          &copy; 2019 Raphaël Colson | raphcolson@gmail.com | 0476 48 37 10
         </Footer>
       </Contact>
     </Parallax>

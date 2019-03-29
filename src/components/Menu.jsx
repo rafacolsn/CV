@@ -54,8 +54,9 @@ const Ul = styled.ul`
 
     }
   @media (min-width: 900px) {
+    font-size: 1.4rem;
+
     li {
-      
       display: inline-block;
 
       &::after {

@@ -143,6 +143,7 @@ const Hero = ({ children, offset }) => (
         <Bounce>
           <SVG
             icon="doubleDown"
+            hiddenMobile
             width={8}
             stroke={colors["grey-lighter"]}
             left="48%"
