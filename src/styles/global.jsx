@@ -20,6 +20,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  iframe {
+    border-style: none;
+}
   a {
     color: #e07628;
     text-decoration: none;

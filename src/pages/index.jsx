@@ -36,7 +36,7 @@ import Languages from "../views/Languages";
 const ProjectsWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
   display: grid;
-  grid-gap: 4rem;
+  grid-gap: 6rem;
   grid-template-columns: repeat(3, 1fr);
   @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
@@ -84,9 +84,8 @@ const Iframes = Badges.map((el, index) => {
       className="badges"
       key={"b" + index}
       url={el.url}
-      width="330px"
-      height="200px"
-      position="relative"
+      width="330"
+      height="186"
     />
   );
 });
@@ -342,7 +341,13 @@ const Index = () => (
             <p>Yes, we can !</p>
           </ProjectCard>
           <ProjectCard title="Español" bg={colors.orange}>
-            <SVG icon="toro" width={24} fill={colors.red} left="70%" top="65%" />
+            <SVG
+              icon="toro"
+              width={24}
+              fill={colors.red}
+              left="70%"
+              top="65%"
+            />
             <p>Me recuerdo bastante bien, tio.</p>
           </ProjectCard>
         </ProjectsWrapper>
