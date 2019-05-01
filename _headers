@@ -4,13 +4,18 @@
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
+  Referrer-Policy: same-origin
 /static/*
   Cache-Control: public, max-age=31536000, immutable
 /sw.js
   Cache-Control: no-cache
 /offline-plugin-app-shell-fallback/
-  Link: </webpack-runtime-0814c5c84ca620be837c.js>; rel=preload; as=script
-  Link: </component---node-modules-gatsby-plugin-offline-app-shell-js-cfbad065658beecf4111.js>; rel=preload; as=script
+  Link: </webpack-runtime-3c7f43cdf2055275d1e3.js>; rel=preload; as=script
+  Link: </app-ab91efd4027b091aad78.js>; rel=preload; as=script
+  Link: </component---node-modules-gatsby-plugin-offline-app-shell-js-d2ab342dde9da19fd9e9.js>; rel=preload; as=script
 /
-  Link: </webpack-runtime-0814c5c84ca620be837c.js>; rel=preload; as=script
-  Link: </styles.618662bd9005c0ddfbc9.css>; rel=preload; as=script
+  Link: </webpack-runtime-3c7f43cdf2055275d1e3.js>; rel=preload; as=script
+  Link: </app-ab91efd4027b091aad78.js>; rel=preload; as=script
+  Link: </styles-49b62ec4a8a5b6618758.js>; rel=preload; as=script
+  Link: </6-9c59233c90178890c4ee.js>; rel=preload; as=script
+  Link: </component---src-pages-index-jsx-c242a8e4f0bd8a159f3f.js>; rel=preload; as=script
