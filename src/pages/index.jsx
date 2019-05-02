@@ -11,6 +11,7 @@ import { colors } from "../../tailwind";
 import Layout from "../components/Layout";
 import MyTimeline from "../views/MyTimeline";
 import Menu from "../components/Menu";
+import Badge from "../components/badges";
 
 // Elements
 import Inner from "../elements/Inner";
@@ -21,7 +22,6 @@ import {
   CogTitle,
   LgTitle
 } from "../elements/Titles";
-import { Badges } from "../elements/Badges";
 
 // Views
 import Hero from "../views/Hero";
@@ -36,7 +36,7 @@ import Languages from "../views/Languages";
 const ProjectsWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
   display: grid;
-  grid-gap: 6rem;
+  grid-gap: 4rem;
   grid-template-columns: repeat(3, 1fr);
   @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
@@ -77,18 +77,6 @@ const ContactText = styled.p`
 const Footer = styled.footer`
   ${tw`text-center text-grey absolute pin-b p-20 font-sans text-md lg:text-lg`};
 `;
-
-const Iframes = Badges.map((el, index) => {
-  return (
-    <Iframe
-      className="badges"
-      key={"b" + index}
-      url={el.url}
-      width="330"
-      height="186"
-    />
-  );
-});
 
 export let smOffset = [8, 0, 1, 2.7, 4, 6, 7];
 
@@ -315,7 +303,7 @@ const Index = () => (
       </MyTimeline>
       <Projects offset={smOffset[4]}>
         <CogTitle>Aptitudes</CogTitle>
-        <ProjectsWrapper>{Iframes}</ProjectsWrapper>
+        <ProjectsWrapper><Badge /></ProjectsWrapper>
       </Projects>
       <Languages offset={smOffset[5]}>
         <LgTitle>Langues</LgTitle>

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   *, *:before, *:after {
@@ -20,13 +20,20 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-  iframe {
-    border-style: none;
-}
   a {
     color: #e07628;
     text-decoration: none;
   }
-`
+  .badges-wrap {
+    display: grid;
+    grid-gap: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    background-color: rgb(221, 221, 221);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

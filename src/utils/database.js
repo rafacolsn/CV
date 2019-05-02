@@ -15,8 +15,12 @@ const connexion = async () => {
   const response = await axios.get(api, {
     headers: { Authorization: `Bearer ${res.access_token}` }
   });
-  console.log(response.data);
+  console.log(response.data.result[0]);
   return response.data;
 };
 
-export { authentification, connexion };
+const badgeName = async () => {
+  const resp = await connexion();
+}
+
+export { badgeName, connexion };
