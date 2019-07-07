@@ -31,6 +31,7 @@ import Contact from "../views/Contact";
 import avatar from "../images/rafacolson.jpg";
 import ProjectCard from "../components/ProjectCard";
 import Languages from "../views/Languages";
+
 export const BadgesWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
   display: grid;
@@ -98,11 +99,15 @@ const ContactText = styled.p`
 const Footer = styled.footer`
   ${tw`text-center text-grey absolute pin-b p-20 font-sans text-md lg:text-lg`};
 `;
-export let smOffset = [8, 0, 1, 2.7, 4, 6, 7];
+export let smOffset = [8, 0, 1, 2.2, 4, 6, 7];
 
 if (typeof window !== `undefined`) {
+
+    if (window.matchMedia("(max-width: 900px)").matches) {
+        smOffset = [9, 0, 1, 2.2, 4, 7, 8];
+    }
     if (window.matchMedia("(max-width: 400px)").matches) {
-        smOffset = [13, 0, 1.5, 4.5, 8, 11, 12];
+        smOffset = [13, 0, 1, 3, 7, 11, 12];
     }
 }
 
